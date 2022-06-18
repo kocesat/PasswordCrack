@@ -26,8 +26,9 @@ public class DemoCrack {
         List<Lock> possibleLocks = generatePossibleLocks(firstCodeOptions, secondCodeOptions, thirdCodeOptions);
         List<Lock> eligibles = filterEligiblesUsing(hints, possibleLocks);
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed at: " + (end - start) + " ms." );
+        System.out.println("Solutions: ");
         eligibles.forEach(System.out::println);
+        System.out.println("Elapsed at: " + (end - start) + " ms." );
     }
 
     private static List<Lock> filterEligiblesUsing(List<Hint> hints, List<Lock> possibleLocks) {

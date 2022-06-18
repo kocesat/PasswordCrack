@@ -17,13 +17,13 @@ public class Demo {
         constraints.add(new Hint(List.of(3, 8, 7), 0, true));
         constraints.add(new Hint(List.of(2, 1, 9), 1, false));
 
-        int[] possibleSolutions = IntStream.range(100, 1000).toArray();
-        int[] solutions = Arrays.stream(possibleSolutions)
+        int[] solutionSpace = IntStream.range(100, 1000).toArray();
+        int[] solutions = Arrays.stream(solutionSpace)
                 .filter(candidate -> satisfiesConstraints(candidate, constraints))
                 .toArray();
+        System.out.println("Solutions:" + Arrays.toString(solutions));
         long end = System.currentTimeMillis();
         System.out.println("Elapsed at: " + (end - start) + " ms." );
-        System.out.println(Arrays.toString(solutions));
     }
 
 
