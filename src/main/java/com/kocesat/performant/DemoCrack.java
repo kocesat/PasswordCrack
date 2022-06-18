@@ -1,6 +1,6 @@
-package com.kocesat.passwordcrack;
+package com.kocesat.performant;
 
-import com.kocesat.passwordcrack.enums.Policy;
+import com.kocesat.performant.enums.Policy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class DemoCrack {
     public static void main(String[] args) {
+        long start = System.currentTimeMillis(); // for performance measuring
         List<Hint> hints = new ArrayList<>();
         hints.add(new Hint(6, 9, 0, Policy.ONE_IN_CORRECT_PLACE));
         hints.add(new Hint(7, 4, 1, Policy.ONE_IN_WRONG_PLACE));
@@ -24,6 +25,8 @@ public class DemoCrack {
         reducePossibilities(hints, firstCodeOptions, secondCodeOptions, thirdCodeOptions);
         List<Lock> possibleLocks = generatePossibleLocks(firstCodeOptions, secondCodeOptions, thirdCodeOptions);
         List<Lock> eligibles = filterEligiblesUsing(hints, possibleLocks);
+        long end = System.currentTimeMillis();
+        System.out.println("Elapsed at: " + (end - start) + " ms." );
         eligibles.forEach(System.out::println);
     }
 

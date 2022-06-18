@@ -1,4 +1,4 @@
-package com.kocesat.passwordcrack;
+package com.kocesat.performant;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

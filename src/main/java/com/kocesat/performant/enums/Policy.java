@@ -1,4 +1,4 @@
-package com.kocesat.passwordcrack.enums;
+package com.kocesat.performant.enums;
 
 public enum Policy {
     ONE_IN_CORRECT_PLACE("One number is correct and in the correct place"),

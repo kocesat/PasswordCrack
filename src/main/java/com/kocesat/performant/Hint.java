@@ -1,6 +1,6 @@
-package com.kocesat.passwordcrack;
+package com.kocesat.performant;
 
-import com.kocesat.passwordcrack.enums.Policy;
+import com.kocesat.performant.enums.Policy;
 import lombok.Data;
 
 @Data
